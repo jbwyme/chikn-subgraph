@@ -1,4 +1,4 @@
-# A "The Graph" Subgraph for [Chikn](https://chikn.farm)
+# A [Subgraph](https://thegraph.com/) for [Chikn](https://chikn.farm)
 
 `graph codegen`
 
