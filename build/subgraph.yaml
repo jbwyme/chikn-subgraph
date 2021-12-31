@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Chikn
@@ -18,13 +18,13 @@ dataSources:
         - SaleToggle
       abis:
         - name: Chikn
-          file: ./abis/Chikn.json
+          file: Chikn/abis/Chikn.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
         - event: SaleToggle(uint256,bool,uint256)
           handler: handleSaleToggle
-      file: ./src/chikn.ts
+      file: Chikn/Chikn.wasm
   - kind: ethereum
     name: Egg
     network: avalanche
@@ -43,17 +43,11 @@ dataSources:
         - UnStakeds
       abis:
         - name: Egg
-          file: ./abis/Egg.json
+          file: Egg/abis/Egg.json
       eventHandlers:
         - event: Minted(address,uint256)
           handler: handleClaimEggs
-        # - event: Burned(address,uint256)
-        #   handler: handleBurned
-        # - event: Staked(uint256,uint256)
-        #   handler: handleRoost
-        # - event: UnStaked(uint256,uint256)
-        #   handler: handleUnRoost
-      file: ./src/egg.ts
+      file: Egg/Egg.wasm
   - kind: ethereum
     name: Feed
     network: avalanche
@@ -75,20 +69,8 @@ dataSources:
         - EggSwap
       abis:
         - name: Feed
-          file: ./abis/Feed.json
+          file: Feed/abis/Feed.json
       eventHandlers:
         - event: Minted(address,uint256)
           handler: handleClaimFeed
-        # - event: MintedEgg(address,uint256)
-        #   handler: handleMintedEgg
-        # - event: Burned(address,uint256)
-        #   handler: handleBurned
-        # - event: BurnedEgg(address,uint256)
-        #   handler: handleBurnedEgg
-        # - event: EggStaked(address,uint256)
-        #   handler: handleEggStaked
-        # - event: EggUnStaked(address,uint256)
-        #   handler: handleEggUnStaked
-        # - event: EggSwap(address,uint256)
-        #   handler: handleEggSwap
-      file: ./src/feed.ts
+      file: Feed/Feed.wasm
