@@ -1,4 +1,4 @@
-# chikn-subgraph
+# A "The Graph" Subgraph for [https://chikn.farm/market](Chikn)
 
 `graph codegen`
 
